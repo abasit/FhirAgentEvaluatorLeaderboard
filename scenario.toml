@@ -1,16 +1,15 @@
 [green_agent]
-agentbeats_id = ""
-env = { API_KEY = "${GITHUB_SECRET_NAME}", LOG_LEVEL = "INFO" }
+agentbeats_id = "019bc3a3-0697-7253-bcc2-d246bbbae159"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", FHIR_SERVER_URL="http://fhir-server:8080/fhir" }
 
 [[participants]]
+name = "purple_agent"
 agentbeats_id = ""
-name = "role_1_name"
-env = {}
-
-[[participants]]
-agentbeats_id = ""
-name = "role_2_name"
-env = {}
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
-# Add your assessment config here
+num_tasks = 0                       # Number of tasks to run (0 = all)
+tasks_file = "data/all_tasks.csv"   # Task CSV file
+mcp_enabled = true                  # Enable MCP tool execution
+max_iterations = 10                 # Max agent turns per task
+max_concurrent = 3                  # Parallel task execution

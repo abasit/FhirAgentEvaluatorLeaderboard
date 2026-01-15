@@ -58,6 +58,12 @@ DEFAULT_ENV_VARS = {"PYTHONUNBUFFERED": "1"}
 COMPOSE_TEMPLATE = """# Auto-generated from scenario.toml
 
 services:
+  fhir-server:
+    image: ghcr.io/abasit/fhir-mimic-h2:latest
+    container_name: fhir-server
+    networks:
+      - agent-network
+  
   green-agent:
     image: {green_image}
     platform: linux/amd64
