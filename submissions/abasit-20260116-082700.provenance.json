@@ -1,0 +1,18 @@
+{
+  "image_digests": {
+    "fhir-server": "ghcr.io/abasit/fhir-mimic-h2@sha256:6877ead3231bda9c8355b8027a5e5ef7c49f0139147f203d88b381c42f677b74",
+    "green-agent": "ghcr.io/abasit/fhiragentevaluator@sha256:736336a18b0680fb6213b162d962f015095efe97309f0355faeaad55b5fca261",
+    "purple_agent": "ghcr.io/abasit/fhiragentmcp@sha256:294126f297170246456b42b82cdb0c2f5641e2e6a073812300f4ab00dbfd09ba",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-16T08:27:00Z",
+  "github_actions": {
+    "run_url": "https://github.com/abasit/FhirAgentEvaluatorLeaderboard/actions/runs/21054195954",
+    "run_logs_url": "https://api.github.com/repos/abasit/FhirAgentEvaluatorLeaderboard/actions/runs/21054195954/logs",
+    "ref": "refs/heads/fireagentmcp-test-1",
+    "sha": "04d5736498343986d6b5bf97eaa21bbe82bf1348",
+    "repository_url": "https://github.com/abasit/FhirAgentEvaluatorLeaderboard",
+    "workflow_ref": "abasit/FhirAgentEvaluatorLeaderboard/.github/workflows/run-scenario.yml@refs/heads/fireagentmcp-test-1",
+    "workflow_sha": "04d5736498343986d6b5bf97eaa21bbe82bf1348"
+  }
+}
