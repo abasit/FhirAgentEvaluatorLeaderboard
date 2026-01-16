@@ -61,6 +61,8 @@ services:
   fhir-server:
     image: ghcr.io/abasit/fhir-mimic-h2:latest
     container_name: fhir-server
+    logging:
+      driver: none
     networks:
       - agent-network
   
