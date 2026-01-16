@@ -4,7 +4,7 @@ env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", FHIR_SERVER_URL="http://fhir-serve
 
 [[participants]]
 name = "purple_agent"
-agentbeats_id = ""
+agentbeats_id = "019bc3dd-a37b-7ac1-8501-a9112622ab83"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
@@ -12,4 +12,4 @@ num_tasks = 0                       # Number of tasks to run (0 = all)
 tasks_file = "data/all_tasks.csv"   # Task CSV file
 mcp_enabled = true                  # Enable MCP tool execution
 max_iterations = 10                 # Max agent turns per task
-max_concurrent = 3                  # Parallel task execution
+max_concurrent = 5                  # Parallel task execution
