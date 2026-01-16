@@ -25,6 +25,15 @@ jobs:
       - name: Install dependencies
         run: pip install tomli tomli-w pyyaml requests
 
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/swift
+          docker system prune -af
+          df -h
+
       - name: Generate docker-compose.yml
         run: python generate_compose.py --scenario scenario.toml
 
