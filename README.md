@@ -111,3 +111,17 @@ FHIR Agent Evaluator uses:
 It is designed to evaluate not just language understanding, but **clinical reasoning, structured data interaction, and action validity**.
 
 
+
+## Setup
+
+To run the evaluation locally, make sure you have docker builds for green and purple agents.
+Then run
+
+```
+python generate_compose.py --scenario scenario.toml
+```
+to generate docker-compose.yml and a2a-scenario.toml files.
+Now you can run the evaluation by
+```
+docker compose up --abort-on-container-exit
+```
