@@ -9,7 +9,6 @@ env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
 num_tasks = 0                       # Number of tasks to run (0 = all)
-tasks_file = "data/all_tasks.csv"   # Task CSV file
+tasks_file = "data/eval_tasks.csv"   # Task CSV file
 mcp_enabled = true                  # Enable MCP tool execution
 max_iterations = 10                 # Max agent turns per task
-max_concurrent = 3                  # Parallel task execution
