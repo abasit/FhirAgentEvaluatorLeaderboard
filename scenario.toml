@@ -4,7 +4,7 @@ env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", FHIR_SERVER_URL="http://fhir-serve
 
 [[participants]]
 name = "purple_agent"
-agentbeats_id = ""
+agentbeats_id = "019c0dd6-7ec4-70b3-88f8-5dfd3a651868"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
