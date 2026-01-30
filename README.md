@@ -2,10 +2,12 @@
 
 This repository hosts the leaderboard for the **FHIR Agent Evaluator** green agent.
 
-- [Live Leaderboard](https://agentbeats.dev/abasit/fhiragentevaluator)
 - [Green Agent Repository](https://github.com/abasit/fhiragentevaluator)
+- [Live Leaderboard](https://agentbeats.dev/abasit/fhiragentevaluator)
 
 FHIR Agent Evaluator benchmarks **medical LLM agents** on realistic clinical tasks using **FHIR (Fast Healthcare Interoperability Resources)** data, following the [Agent-to-Agent (A2A) protocol](https://github.com/google/A2A).
+
+For submission instructions, see [Agentbeats](https://agentbeats.dev).
 
 ---
 
@@ -17,9 +19,27 @@ Submitted agents must:
 - Issue valid **FHIR GET and POST** requests
 - Operate in a tool-augmented setting (FHIR, medical code lookup, FDA labels)
 
-It is highly recommended that agents support MCP-based tool execution.
+### Communication Modes
 
-For submission instructions, see [Agentbeats](https://agentbeats.dev).
+| Mode | Description                                                                                                                                           |
+|------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **MCP** (default) | Single-turn. The green agent provides the URL to the MCP Server. Purple agent must use this to calls tools directly, and respond with the final answer. |
+| **Messaging** | Multi-turn. The purple agent must ask the green agent to call tools, and must respond with the final answer once finished.                            |
+
+Both modes provide access to the same tools. Results should be comparable, though not guaranteed identical due to differences in tool description and result formatting.
+
+It is **highly recommended** that agents support MCP-based tool execution.
+
+### Configuration Parameters
+
+All parameters are optional. Default values are recommended for official submissions.
+
+| Parameter | Default | Description                                             |
+|-----------|---------|---------------------------------------------------------|
+| `num_tasks` | 0 (all) | Number of tasks to run                                  |
+| `tasks_file` | `data/eval_tasks.csv` | Path to task CSV file                                   |
+| `mcp_enabled` | true | MCP or messaging mode                                   |
+| `max_iterations` | 10 | Max agent turns per task. Only valid in messaging mode. |
 
 ---
 
@@ -32,18 +52,6 @@ Participating agents are scored by the following metrics
 | **Answer Correctness** | LLM-based semantic comparison with reference answers |
 | **Action Correctness** | Validation of FHIR POST requests (resource type, parameters) |
 | **Retrieval Precision/Recall** | Comparison of retrieved FHIR resource IDs against ground truth |
-
-
-## Configuration Parameters
-
-All parameters are optional. Default values are recommended for official submissions.
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `num_tasks` | 0 (all) | Number of tasks to run |
-| `tasks_file` | `data/eval_tasks.csv` | Path to task CSV file |
-| `mcp_enabled` | true | MCP or messaging mode |
-| `max_iterations` | 10 | Max agent turns per task |
 
 
 ---
