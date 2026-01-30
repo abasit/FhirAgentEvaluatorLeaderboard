@@ -80,7 +80,7 @@ jobs:
       - name: Run assessment
         run: |
           docker compose up -d fhir-server
-          docker compose up --timestamps --no-color --exit-code-from agentbeats-client --abort-on-container-exit agentbeats-client green-agent purple-agent
+          docker compose up --timestamps --no-color --exit-code-from agentbeats-client --abort-on-container-exit agentbeats-client green-agent purple_agent
 
 
       - name: Record provenance
