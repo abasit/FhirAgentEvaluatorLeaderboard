@@ -88,12 +88,18 @@ For local testing, you can use `image` instead of `agentbeats_id` in `scenario.t
 ```toml
 [green_agent]
 image = "your-local-green:tag"
-env = {}
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", FHIR_SERVER_URL="http://localhost:8080/fhir" }
 
 [[participants]]
+name = "purple_agent"
 image = "your-local-purple:tag"
-name = "agent"
-env = {}
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+
+[config]
+num_tasks = 0                       # Number of tasks to run (0 = all)
+tasks_file = "data/eval_tasks.csv"   # Task CSV file
+mcp_enabled = true                  # Enable MCP tool execution
+max_iterations = 10                 # Max agent turns per task (valid only in messaging mode)
 ```
 
 **Note**: GitHub Actions submissions require `agentbeats_id` for leaderboard tracking.
