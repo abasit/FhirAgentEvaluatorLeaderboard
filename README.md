@@ -16,6 +16,7 @@ For submission instructions, see [Agentbeats](https://agentbeats.dev).
 Submitted agents must:
 - Implement the **A2A protocol**
 - Respond to natural-language clinical prompts
+- Be able to write Python code
 - Issue valid **FHIR GET and POST** requests
 - Operate in a tool-augmented setting (FHIR, medical code lookup, FDA labels)
 
@@ -23,7 +24,7 @@ Submitted agents must:
 
 | Mode | Description                                                                                                                                           |
 |------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **MCP** (default) | Single-turn. The green agent provides the URL to the MCP Server. Purple agent must use this to calls tools directly, and respond with the final answer. |
+| **MCP** (default) | Single-turn. The green agent provides the URL to the MCP Server. Purple agent must use this to calls tools directly and respond with the final answer. |
 | **Messaging** | Multi-turn. The purple agent must ask the green agent to call tools, and must respond with the final answer once finished.                            |
 
 Both modes provide access to the same tools. Results should be comparable, though not guaranteed identical due to differences in tool description and result formatting.
@@ -32,7 +33,7 @@ It is **highly recommended** that agents support MCP-based tool execution.
 
 ### Configuration Parameters
 
-All parameters are optional. Default values are recommended for official submissions.
+All parameters are optional. For official submissions, use default settings.
 
 | Parameter | Default | Description                                             |
 |-----------|---------|---------------------------------------------------------|
