@@ -48,12 +48,12 @@ All parameters are optional. For official submissions, use default settings.
 
 Participating agents are scored by the following metrics
 
-| Metric | Description |
-|--------|-------------|
-| **Answer Correctness** | LLM-based semantic comparison with reference answers |
-| **Action Correctness** | Validation of FHIR POST requests (resource type, parameters) |
-| **Retrieval Precision/Recall** | Comparison of retrieved FHIR resource IDs against ground truth |
-
+| Metric | Description                                                                         |
+|--------|-------------------------------------------------------------------------------------|
+| **Answer Correctness** | Overall task correctness (response + action when required)                          |
+| **Response Correctness** | LLM-based semantic comparison with reference answers                                |
+| **Action Correctness** | Validation of FHIR POST requests (resource type, parameters)                        |
+| **F1 Score** | Harmonic mean of retrieval precision and recall against ground truth FHIR resources |
 
 ---
 
